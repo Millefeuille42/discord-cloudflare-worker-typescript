@@ -1,0 +1,6 @@
+name = "workerdiscordbot"
+main = "src/worker/index.ts"
+compatibility_date = "2025-07-28"
+
+[observability]
+	enabled = true
