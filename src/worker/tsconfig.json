@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
+    "types": ["../../worker-configuration.d.ts"]
+  },
+  "include": ["./**/*.ts", "../../worker-configuration.d.ts"]
+}

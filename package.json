@@ -1,0 +1,31 @@
+{
+  "name": "cloudflare_worker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build:worker": "tsc -p src/worker/ && vite build --config vite.worker.config.ts",
+    "build:register": "tsc -p src/register/ && vite build --config vite.register.config.ts",
+    "build": "yarn build:register && npm run build:worker",
+    "cf-typegen": "wrangler types",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "ngrok": "ngrok http 8787",
+    "test": "vitest",
+    "publish": "wrangler deploy",
+    "register": "yarn build:register && yarn dist/node/register.js"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.57",
+    "ngrok": "^5.0.0-beta.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.26.0"
+  },
+  "dependencies": {
+    "@types/node": "^24.1.0",
+    "discord-interactions": "^4.3.0",
+    "dotenv": "^17.2.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"types": ["@cloudflare/vitest-pool-workers"],
+		"moduleResolution": "Bundler",
+		"useDefineForClassFields": true,
+		"allowImportingTsExtensions": true,
+	},
+	"include": ["./**/*.ts", "../worker-configuration.d.ts"],
+}
